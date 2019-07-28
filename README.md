@@ -1,0 +1,2 @@
+# lukujarjestys
+Tässä projektissa koodi tekee lukujärjestysvaihtoehtoja annetulle kurssitarjottimelle käyttäjän määrittämillä kurssivaihtoehdoilla.
