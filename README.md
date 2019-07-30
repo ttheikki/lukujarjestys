@@ -10,13 +10,21 @@ Ohjelma vaatii nykyisellään kaksi Excelistä tallennettua .csv-tiedostoa:
 Näiden perusteella ohjelma laskee käyttäjän määräämän määrän lukujärjestysvaihtoehtoja (oletuksena 1000), ja etsii vaihtoehdoista ne, joissa mukaan tulee mahdollisimman suuri osa opiskelijan määräämistä omista kursseista. Näistä tulostetaan ruudulle sitten käyttäjän valitsema määrä (oletuksena 4) "parasta" vaihtoehtoa.
 
 Käyttö: python3 lukujarj.py [parametrit]
+
 Komentoriviparametrit ovat (vaihda <x>: tilalle numero):
+
 -h tai --kaytto: tämä opaste
+
 -j <x> tai --jaksoja=<x>: jaksojen lukumäärä (oletus=5)
+
 -p <x> tai --palkkeja=<x>: palkkien lukumäärä (oletus=8)
+
 -y <x> tai --yrityksia=<x>: montako vaihtoehtoa käydään läpi (oletus=1000)
+
 -v <x> tai --vaihtoehtoja=<x>: montako parasta vaihtoehtoa näytetään (oletus=4)
+
 -l tai --kerro: kerro vähän prosessin kulusta (auttaa löytämään mahdolliset virheet)
+
 -s tai --hiljainen: näytä pelkästään lukujärjestysvaihtoehdot
   
 Tulevaisuudessa tähän voisi vielä lisätä:
