@@ -15,9 +15,10 @@ yrityksia = 1000
 vaihtoehtoja = 4
 verbose = 0
 hiljainen = 0
+ulostulo = "näytölle"
 
 try:
-    opts, args = getopt.getopt(sys.argv[1:],"hj:p:y:v:ls",["kaytto","jaksoja=","palkkeja=","yrityksia=","vaihtoehtoja=","kerro","hiljainen"])
+    opts, args = getopt.getopt(sys.argv[1:],"hj:p:y:v:lst:",["kaytto","jaksoja=","palkkeja=","yrityksia=","vaihtoehtoja=","kerro","hiljainen","taulukkotiedosto="])
 except getopt.GetoptError:
     opts=set()
 #    print 'lukujarj.py -i <inputfile> -o <outputfile>'
@@ -33,6 +34,7 @@ for opt, arg in opts:
         print('-v <x> tai --vaihtoehtoja=<x>: montako parasta vaihtoehtoa näytetään (oletus=4)')
         print('-l tai --kerro: kerro vähän prosessin kulusta (auttaa löytämään mahdolliset virheet)')
         print('-s tai --hiljainen: tulosta pelkät lukujärjestysvaihtoehdot, ei mitään muuta')
+        print('-t <x> tai --taulukkotiedosto=<x>: vie tulostus taulukkotiedostoon <x> (yleensä .xls-päätteinen)')
         sys.exit()
     elif opt in ("-j", "--jaksoja"):
         jaksoja = int(arg)
@@ -46,6 +48,8 @@ for opt, arg in opts:
         verbose = 1
     elif opt in ("-s", "--hiljainen"):
         hiljainen = 1
+    elif opt in ("-t", "--taulukkotiedosto"):
+        ulostulo = arg
 
 sopimattomat = [100 for i in range(vaihtoehtoja)]
 tulokset = [[[set for j in range(jaksoja)] for k in range(palkkeja)] for i in range(vaihtoehtoja)]
@@ -74,7 +78,7 @@ for k in range(0, palkkeja):
         omat[k][j] = lj.intersection(jkurssit[k][j], omatkurssit)
 
 # Siirrä kurssit, joissa toista tarvitaan ennakkotietona, myöhemmäksi. Tämä ei takaa ennakkotietokurssin olevan ennen sitä seuraavaa kurssia, mutta auttaa asiaa.
-lj.ennakkotietopoisto(omat, ennakkotiedot, hiljainen)
+lj.ennakkotietopoisto(omat, ennakkotiedot, hiljainen, verbose)
         
 # Poista vielä kurssit, joille löytyy uniikki palkki, ts., sellainen, jossa ei ole muita omia kursseja
 lj.poista_uniikit(omat)
@@ -118,10 +122,13 @@ for j in range(0,yrityksia):
             sopimattomat[k]=len(eiloydy)
             eiloytyneet[k]=eiloydy
 
-for j in range(0, vaihtoehtoja):
-    print('*************** Lukujärjestysvaihtoehto', j+1,'*******************')
-    lj.tulosta_lukujarj(tulokset[j], eiloytyneet[j])
-    print('\n')
+if ulostulo == "näytölle":
+    for j in range(0, vaihtoehtoja):
+        print('*************** Lukujärjestysvaihtoehto', j+1,'*******************')
+        lj.tulosta_lukujarj(tulokset[j], eiloytyneet[j])
+        print('\n')
+else:
+    f.tulokset_taulukkoon(tulokset, eiloytyneet, ulostulo)
 
 end = time.time()
 

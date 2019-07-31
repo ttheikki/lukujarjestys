@@ -57,3 +57,42 @@ def lueomatkurssit(hiljainen):
 
 
     return omatkurssit, pakotetut, ennakkotiedot
+
+def tulokset_taulukkoon(tulokset, eiloytyneet, tiedosto):
+    import xlwt
+    from lukujarjtools import toistuvat_kurssit
+
+    firstheaderstyle = xlwt.easyxf('font: name Times New Roman, color-index red, bold on')
+    tableheaderstyle = xlwt.easyxf('font: name Times New Roman, color-index black, bold on')
+#    lukujarjstyle = xlwt.easyxf('font: name Times New Roman, border: left thin,right thin,top thin,bottom thin')
+    lukujarjstyle = xlwt.easyxf('border: left medium,right medium,top medium,bottom medium')
+ 
+    textstyle = xlwt.easyxf('font: name Times New Roman')
+    
+    wb = xlwt.Workbook()
+    j=0
+    for vaihtoehto in tulokset:
+        j += 1
+        ws = wb.add_sheet("".join(['Vaihtoehto ',str(j)]))
+        ws.write(0, 0, "".join(['Lukujärjestysvaihtoehto ', str(j)]), style=firstheaderstyle)
+        ws.write(1, 0, "Jaksot ovat eri riveillä, palkit eri sarakkeissa", style=textstyle)
+        k = 0
+        for palkki in vaihtoehto:
+            ws.write(3, k+1, k+1, style = tableheaderstyle)
+            k += 1
+            l = 0
+            for jakso in palkki:
+                if k == 1:
+                    ws.write(4+l, 0, l+1, style = tableheaderstyle)
+                for val in jakso:
+                    ws.write(4+l, k, val, style = lukujarjstyle)
+                l += 1
+        toistuvat, nahty = toistuvat_kurssit(vaihtoehto)
+        if len(toistuvat) > 0:
+            for x in toistuvat:
+                ws.write(6+l, 0, "".join(['Huomaa, että kurssi ', x, ' esiintyy ', str(nahty[x]), ' kertaa, eli nuo paikat ovat vaihtoehtoisia']), style = textstyle)
+                l += 1
+        if len(eiloytyneet[j-1]) >0:
+            ws.write(6+l, 0, "".join(["En saanut näitä kursseja sopimaan: ", ",".join(eiloytyneet[j-1])]), style = textstyle)
+
+    wb.save(tiedosto)

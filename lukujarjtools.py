@@ -136,7 +136,7 @@ def onko_kurssia(list1, kurssi):
     return 1
     
 
-def ennakkotietopoisto(kaikki,ennakkotiedot, hiljainen):
+def ennakkotietopoisto(kaikki,ennakkotiedot, hiljainen, verbose):
     for x in ennakkotiedot:
         ekajakso1 = etsi_ekajakso(kaikki, x[0])
         ekajakso2 = etsi_ekajakso(kaikki, x[1])
