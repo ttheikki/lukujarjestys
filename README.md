@@ -11,7 +11,7 @@ Näiden perusteella ohjelma laskee käyttäjän määräämän määrän lukujä
 
 Käyttö: python3 lukujarj.py [parametrit]
 
-Komentoriviparametrit ovat (vaihda <x>: tilalle numero):
+Komentoriviparametrit ovat (vaihda <x>: tilalle numero tai tiedostonimi):
 
 -h tai --kaytto: tämä opaste
 
@@ -26,9 +26,10 @@ Komentoriviparametrit ovat (vaihda <x>: tilalle numero):
 -l tai --kerro: kerro vähän prosessin kulusta (auttaa löytämään mahdolliset virheet)
 
 -s tai --hiljainen: näytä pelkästään lukujärjestysvaihtoehdot
+
+-t <x> tai --taulukkotiedosto=<x>: vie tulostus taulukkotiedostoon <x> (yleensä .xls-päätteinen)
   
 Tulevaisuudessa tähän voisi vielä lisätä:
-- Vaihtoehtojen tulostus suoraan Excel-tiedostoon
 - Suora Excel-tiedostojen luku, ja käyttäjän mahdollisuus spesifioida ne
 - Mahdollisesti useiden kurssitarjottimien käyttö, jotta voi katsoa kursseja monesta lukiosta
 - Erilaisia hintafunktioita eri asioiden optimointiin (esim. kaksi lukujärjestystä mahdollisimman samanlaiset)
