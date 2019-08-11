@@ -9,22 +9,33 @@ Ohjelma vaatii nykyisellään kaksi Excelistä tallennettua .csv-tiedostoa:
 
 Näiden perusteella ohjelma laskee käyttäjän määräämän määrän lukujärjestysvaihtoehtoja (oletuksena 1000), ja etsii vaihtoehdoista ne, joissa mukaan tulee mahdollisimman suuri osa opiskelijan määräämistä omista kursseista. Näistä tulostetaan ruudulle sitten käyttäjän valitsema määrä (oletuksena 4) "parasta" vaihtoehtoa.
 
-#Asennus:
-(Ohjeet tarkentuvat vielä)
+## Asennus Mac-tietokoneelle:
+(Ohjeet tarkentuvat vielä. Päätteelle annettavat komennot on kätevintä leikata ja liimata tästä ohjeesta.)
 
-- Avaa terminaali
-- Asenna komentorivikehitystyökalut painamalla "Asenna"
+- Avaa Pääte-ohjelma (Launchpad - Muut - Pääte)
+
+- Asenna lukujärjestystiedostot komennolla (kirjoita/leikkaa-liimaa komento Päätteelle, ja paina Enter)
+'''git clone https://github.com/ttheikki/lukujarjestys.git ~/Documents/lukujarjestys'''
+
+- Tietokone saattaa pyytää asentamaan komentorivikehitystyökalut. Hyväksy tämä painamalla "Asenna" ja hyväksymällä lisenssitiedot.
+
 - Asenna homebrew:
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-(vaatii sudo-salasanan)
-- brew install python3
-- Asenna lukujärjestystiedostot komennolla
-git clone https://github.com/ttheikki/lukujarjestys.git lukujarjestys
-- Editoi haluttua omien kurssien tiedostoa
-- Aja ohjelma komennolla
-python3 lukujarj.py 
+'''/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'''
+(ohjelma pyytää salasanaasi - kirjoita se)
 
-Käyttö: python3 lukujarj.py [parametrit]
+- Asenna pythonin kolmosversio:
+'''brew install python3'''
+
+- Editoi haluttua omien kurssien tiedostoa (ks. omat-alkuiset tiedostot) esim. Numbers-ohjelmalla. Editointiohjeet ovat [tällä sivulla](OmatKurssit.md) 
+
+- Aja ohjelma esim. komennolla
+'''python3 lukujarj.py -t tarjotin_Norssi_Jyvaskyla_2019.csv -i omat_tokaluokka_esim.csv'''
+
+- Tarkemmat käyttöohjeet ovat alla.
+
+## Käyttö
+
+python3 lukujarj.py [parametrit]
 
 Komentoriviparametrit ovat (vaihda <x>: tilalle numero tai tiedostonimi):
 
@@ -42,8 +53,13 @@ Komentoriviparametrit ovat (vaihda <x>: tilalle numero tai tiedostonimi):
 
 -s tai --hiljainen: näytä pelkästään lukujärjestysvaihtoehdot
 
--t <x> tai --taulukkotiedosto=<x>: vie tulostus taulukkotiedostoon <x> (yleensä .xls-päätteinen)
+-t <x> tai --tarjotin=<x>: käytä kurssitarjotintiedostoa <x> (oletuksena kurssitarjotin.csv)
   
+-i <x> tai --omatkurssit=<x>: omien kurssien tiedosto <x> (oletuksena omatkurssit.csv
+
+-o <x> tai --taulukkotiedosto=<x>: vie tulostus taulukkotiedostoon <x> (yleensä .xls-päätteinen)
+
+## Lisäyssuunnitelmia
 Tulevaisuudessa tähän voisi vielä lisätä:
 - Suora Excel-tiedostojen luku, ja käyttäjän mahdollisuus spesifioida ne
 - Mahdollisesti useiden kurssitarjottimien käyttö, jotta voi katsoa kursseja monesta lukiosta
