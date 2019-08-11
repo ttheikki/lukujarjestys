@@ -16,9 +16,11 @@ vaihtoehtoja = 4
 verbose = 0
 hiljainen = 0
 ulostulo = "näytölle"
+tarjotintiedosto = "kurssitarjotin.csv"
+omakurssitiedosto = "omatkurssit.csv"
 
 try:
-    opts, args = getopt.getopt(sys.argv[1:],"hj:p:y:v:lst:",["kaytto","jaksoja=","palkkeja=","yrityksia=","vaihtoehtoja=","kerro","hiljainen","taulukkotiedosto="])
+    opts, args = getopt.getopt(sys.argv[1:],"hj:p:y:v:lst:i:o:",["kaytto","jaksoja=","palkkeja=","yrityksia=","vaihtoehtoja=","kerro","hiljainen","tarjotin=","omatkurssit=","taulukkotiedosto="])
 except getopt.GetoptError:
     opts=set()
 #    print 'lukujarj.py -i <inputfile> -o <outputfile>'
@@ -34,7 +36,9 @@ for opt, arg in opts:
         print('-v <x> tai --vaihtoehtoja=<x>: montako parasta vaihtoehtoa näytetään (oletus=4)')
         print('-l tai --kerro: kerro vähän prosessin kulusta (auttaa löytämään mahdolliset virheet)')
         print('-s tai --hiljainen: tulosta pelkät lukujärjestysvaihtoehdot, ei mitään muuta')
-        print('-t <x> tai --taulukkotiedosto=<x>: vie tulostus taulukkotiedostoon <x> (yleensä .xls-päätteinen)')
+        print('-t <x> tai --tarjotin=<x>: käytä kurssitarjotintiedostoa <x> (oletuksena kurssitarjotin.csv)')
+        print('-i <x> tai --omatkurssit=<x>: omien kurssien tiedosto <x> (oletuksena omatkurssit.csv')
+        print('-o <x> tai --taulukkotiedosto=<x>: vie tulostus taulukkotiedostoon <x> (yleensä .xls-päätteinen) (ei pakollinen, muutoin näyttää tuloksen ruudulla)')
         sys.exit()
     elif opt in ("-j", "--jaksoja"):
         jaksoja = int(arg)
@@ -48,7 +52,11 @@ for opt, arg in opts:
         verbose = 1
     elif opt in ("-s", "--hiljainen"):
         hiljainen = 1
-    elif opt in ("-t", "--taulukkotiedosto"):
+    elif opt in ("-t", "--tarjotin"):
+        tarjotintiedosto = arg
+    elif opt in ("-i", "--omatkurssit"):
+        omakurssitiedosto = arg
+    elif opt in ("-o", "--taulukkotiedosto"):
         ulostulo = arg
 
 sopimattomat = [100 for i in range(vaihtoehtoja)]
@@ -64,8 +72,8 @@ onnistuneet = 0
 
 omat = [[set for i in range(jaksoja)] for j in range(palkkeja)]
 
-jkurssit = f.luekurssit(jaksoja, palkkeja, hiljainen)
-omatkurssit, pakotetut, ennakkotiedot = f.lueomatkurssit(hiljainen)
+jkurssit = f.luekurssit(tarjotintiedosto, jaksoja, palkkeja, hiljainen)
+omatkurssit, pakotetut, ennakkotiedot = f.lueomatkurssit(omakurssitiedosto, hiljainen)
 
     # Pakota nämä kurssit annetuille paikoille
 for x in pakotetut:

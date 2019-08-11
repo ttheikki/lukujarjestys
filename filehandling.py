@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-def luekurssit(jaksoja,palkkeja, hiljainen):
+def luekurssit(tarjotintiedosto, jaksoja,palkkeja, hiljainen):
     import csv
     jkurssit = [[set for i in range(jaksoja)] for j in range(palkkeja)]
 
-    with open('kurssitarjotin.csv') as tarjotin_file:
+    with open(tarjotintiedosto) as tarjotin_file:
         csv_reader = csv.reader(tarjotin_file, delimiter=';')
         line_count = 0
         kurssit = []
@@ -29,9 +29,9 @@ def luekurssit(jaksoja,palkkeja, hiljainen):
     return jkurssit
 
 
-def lueomatkurssit(hiljainen):
+def lueomatkurssit(omakurssitiedosto, hiljainen):
     import csv
-    with open('omatkurssit.csv') as omat_file:
+    with open(omakurssitiedosto) as omat_file:
         csv_reader = csv.reader(omat_file, delimiter=';')
         line_count2 = 0
         okurssit = []
