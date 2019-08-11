@@ -15,27 +15,26 @@ Näiden perusteella ohjelma laskee käyttäjän määräämän määrän lukujä
 - Avaa Pääte-ohjelma (Launchpad - Muut - Pääte)
 
 - Asenna lukujärjestystiedostot komennolla (kirjoita/leikkaa-liimaa komento Päätteelle, ja paina Enter)
-'''git clone https://github.com/ttheikki/lukujarjestys.git ~/Documents/lukujarjestys'''
-
-- Tietokone saattaa pyytää asentamaan komentorivikehitystyökalut. Hyväksy tämä painamalla "Asenna" ja hyväksymällä lisenssitiedot.
+```git clone https://github.com/ttheikki/lukujarjestys.git ~/Documents/lukujarjestys```
+Tietokone saattaa pyytää asentamaan komentorivikehitystyökalut. Hyväksy tämä painamalla "Asenna" ja hyväksymällä lisenssitiedot.
 
 - Asenna homebrew:
-'''/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'''
+```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
 (ohjelma pyytää salasanaasi - kirjoita se)
 
 - Asenna pythonin kolmosversio:
-'''brew install python3'''
+```brew install python3```
 
 - Editoi haluttua omien kurssien tiedostoa (ks. omat-alkuiset tiedostot) esim. Numbers-ohjelmalla. Editointiohjeet ovat [tällä sivulla](OmatKurssit.md) 
 
 - Aja ohjelma esim. komennolla
-'''python3 lukujarj.py -t tarjotin_Norssi_Jyvaskyla_2019.csv -i omat_tokaluokka_esim.csv'''
+```python3 lukujarj.py -t tarjotin_Norssi_Jyvaskyla_2019.csv -i omat_tokaluokka_esim.csv```
 
 - Tarkemmat käyttöohjeet ovat alla.
 
 ## Käyttö
 
-python3 lukujarj.py [parametrit]
+```python3 lukujarj.py [parametrit]```
 
 Komentoriviparametrit ovat (vaihda <x>: tilalle numero tai tiedostonimi):
 
