@@ -9,6 +9,21 @@ Ohjelma vaatii nykyisellään kaksi Excelistä tallennettua .csv-tiedostoa:
 
 Näiden perusteella ohjelma laskee käyttäjän määräämän määrän lukujärjestysvaihtoehtoja (oletuksena 1000), ja etsii vaihtoehdoista ne, joissa mukaan tulee mahdollisimman suuri osa opiskelijan määräämistä omista kursseista. Näistä tulostetaan ruudulle sitten käyttäjän valitsema määrä (oletuksena 4) "parasta" vaihtoehtoa.
 
+#Asennus:
+(Ohjeet tarkentuvat vielä)
+
+- Avaa terminaali
+- Asenna komentorivikehitystyökalut painamalla "Asenna"
+- Asenna homebrew:
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+(vaatii sudo-salasanan)
+- brew install python3
+- Asenna lukujärjestystiedostot komennolla
+git clone https://github.com/ttheikki/lukujarjestys.git lukujarjestys
+- Editoi haluttua omien kurssien tiedostoa
+- Aja ohjelma komennolla
+python3 lukujarj.py 
+
 Käyttö: python3 lukujarj.py [parametrit]
 
 Komentoriviparametrit ovat (vaihda <x>: tilalle numero tai tiedostonimi):
