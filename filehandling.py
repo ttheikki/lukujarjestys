@@ -33,13 +33,17 @@ def lueomatkurssit(omakurssitiedosto, hiljainen):
     import csv
     with open(omakurssitiedosto) as omat_file:
         csv_reader = csv.reader(omat_file, delimiter=';')
-        line_count2 = 0
+        line_count = 0
         okurssit = []
         for row in csv_reader:
-            okurssit.append(row)
-            line_count2 += 1
+            # Ensimmäinen rivi on otsikkoa varten
+            if line_count == 0:
+                line_count += 1
+            else:
+                okurssit.append(row)
+                line_count += 1
         if not hiljainen:
-            print(f'Luin {line_count2} omaa kurssia.')
+            print(f'Luin {line_count} omaa kurssia.')
 
 # En osannut lukea suoraan set-muotoon, joten teen tämän nyt näin
     omatkurssit = set()
