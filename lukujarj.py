@@ -1,5 +1,10 @@
 #!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
+##########################
+# Lukujärjestysgeneraattori (työnimi, nimi vaihtuu vielä)
+# Ensimmäisen version tekijä: Tero Heikkilä (etunimi.T.sukunimi@jyu.fi)
+# Tällä ohjelmalla generoit lukujärjestysvaihtoehtoja haluamillesi kursseille
+
 import lukujarjtools as lj
 import filehandling as f
 import sys, getopt
