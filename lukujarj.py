@@ -31,7 +31,7 @@ except getopt.GetoptError:
 #    print 'lukujarj.py -i <inputfile> -o <outputfile>'
 #    sys.exit(2)
 for opt, arg in opts:
-    if opt in ("-h", "kaytto"):
+    if opt in ("-h", "--kaytto"):
         print('LUJÄKE: LukuJärjestysKeneraattori')
         print('Komentoriviparametrit ovat (vaihda <x>: tilalle numero):')
         print('-h tai --kaytto: tämä opaste')
