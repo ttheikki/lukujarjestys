@@ -32,6 +32,10 @@ Tietokone saattaa pyytää asentamaan komentorivikehitystyökalut. Hyväksy täm
 
 - Editoi haluttua omien kurssien tiedostoa (ks. omat-alkuiset tiedostot) esim. Numbers-ohjelmalla. Editointiohjeet ovat [tällä sivulla](OmatKurssit.md) 
 
+- Vaihda hakemistoon, jonka loit lukujärjestysohjelmalle kirjoittamalla terminaalissa komento
+
+´´´cd ~/Documents/lukujarj´´´
+
 - Aja ohjelma esim. komennolla
 
 ```python3 lukujarj.py -t tarjotin_Norssi_Jyvaskyla_2019.csv -i omat_tokaluokka_esim.csv```
