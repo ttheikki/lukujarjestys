@@ -34,7 +34,7 @@ Tietokone saattaa pyytää asentamaan komentorivikehitystyökalut. Hyväksy täm
 
 - Vaihda hakemistoon, jonka loit lukujärjestysohjelmalle kirjoittamalla terminaalissa komento
 
-´´´cd ~/Documents/lukujarj´´´
+```cd ~/Documents/lukujarj```
 
 - Aja ohjelma esim. komennolla
 
