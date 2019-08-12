@@ -30,7 +30,11 @@ Tietokone saattaa pyytää asentamaan komentorivikehitystyökalut. Hyväksy täm
 
 ```brew install python3```
 
-- Editoi haluttua omien kurssien tiedostoa (ks. omat-alkuiset tiedostot) esim. Numbers-ohjelmalla. Editointiohjeet ovat [tällä sivulla](OmatKurssit.md) 
+- Editoi haluttua omien kurssien tiedostoa (ks. omat-alkuiset tiedostot) esim. Numbers-ohjelmalla. Editointiohjeet ovat [tällä sivulla](OmatKurssit.md)
+
+- Vaihda hakemistoon, jonka juuri loit
+
+´´´cd ~/Documents/lukujarj´´´
 
 - Aja ohjelma esim. komennolla
 
