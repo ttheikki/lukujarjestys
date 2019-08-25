@@ -23,7 +23,7 @@ Huomaa, että omien kurssien tiedostoon ei pidä kirjoittaa mitään ylimäärä
 ## Kurssien pakotus tiettyyn paikkaan
 Saat pakotettua tietyn kurssin tiettyyn jaksoon ja palkkiin kirjoittamalla vastaavat numerot kyseisen kurssin riville toiseen ja kolmanteen sarakkeeseen. Tätä toimintoa käyttämällä ensisijaisesti saat määrättyä ne kurssit, jotka koulu vaatii suorittamaan tietyssä palkissa, mutta toissijaisesti voit sen avulla vaikkapa pyrkiä testaamaan, voisitko saada aikaiseksi lukujärjestyksen, jossa pääset vaikkapa kaverisi kanssa samalle englannin tunnille. Voit toki myös pyrkiä saamaan vapaata johonkin tiettyyn palkkiin esim. harrastusten vuoksi. Tällöin voit käyttää sellaista kurssikoodia, jota ei löydy tarjottimelta (vaikka "RÖH11"), ja laittaa sille kyseisen jakson/palkin.
 
-Joissain tapauksissa (esim. LiLulla) koulu katkaisee kaksi kurssia kahtia, ja määrittää niiden paikat - esim. molemmista puoli kurssia jakson 2 palkissa 3 sekä jakson 4 palkissa 2. Ohjelmaan ei voi määrittää puolikkaita kursseja, mutta tämän voi ratkaista pakottamalla toisen kurssin jakson 2 palkkiin 3 ja toisen jakson 4 palkkiin 2.
+Joissain tapauksissa koulu katkaisee kaksi kurssia kahtia, ja määrittää niiden paikat - esim. molemmista puoli kurssia jakson 2 palkissa 3 sekä jakson 4 palkissa 2. Ohjelmaan ei voi määrittää puolikkaita kursseja, mutta tämän voi ratkaista pakottamalla toisen kurssin jakson 2 palkkiin 3 ja toisen jakson 4 palkkiin 2.
 
 ## Usein vastaan tulleita ongelmia
 
