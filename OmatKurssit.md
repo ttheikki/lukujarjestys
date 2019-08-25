@@ -12,8 +12,11 @@
 
 ## Ennakkotiedot
 Jos haluamasi kurssit pitää suorittaa tietyssä järjestyksessä (esim. MAA01 ennen MAA02:sta), voit kirjoittaa tämän toiselle sarakkeelle (esim. MAA02 toiselle sarakkeelle MAA01:n perään). Toisella sarakkeella oleva kurssi pitää myös kirjoittaa erikseen ensimmäiselle sarakkeelle. Esimerkiksi seuraavat rivit mahdollistavat suoritusjärjestyksen MAA01 - MAA02 - MAA03:
+
 MAA01  MAA02
+
 MAA02  MAA03
+
 MAA03
 
 Ohjelma poistaa tarjottimelta ne vaihtoehdot, joissa MAA02 tulee väistämättä ennen MAA01:sta ja MAA03 ennen MAA02:sta. Se ei kuitenkaan ole täydellinen (monimutkaisesta syystä), joten tämä järjestys on hyvä tarkistaa.
