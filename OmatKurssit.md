@@ -2,7 +2,7 @@
 "Omat kurssit" -tiedostossa kerrot, mitkä kurssit haluat vuoden aikana suorittaa. Voit myös asettaa tietyt kurssit suoritettavaksi haluamaasi (tai koulun määrittämään) tiettyy aikaan, ja kertoa, että jonkin kurssin on tultava jotain toista aiemmin.
 
 ## Lyhyet ohjeet
-1. Avaa haluamasi esimerkkitiedosto taulukkolaskentaohjelmalla (mikä tahansa, joka nimellä "omat_xxx.csv").
+1. Avaa haluamasi esimerkkitiedosto taulukkolaskentaohjelmalla (mikä tahansa, joka nimellä "omat_xxx.csv"). Poista turhat tiedot toiselta ja kolmannelta sarakkeelta (eli jollet tiedä niiden olevan oikein, tyhjennä kyseiset sarakkeet).
 2. Valitse mieleisesi kurssikoodit ensimmäiselle sarakkeelle. Koodien pitää olla samat kuin kurssitarjottimella ja lukujärjestyksessä, tyyliin BI02 tai ENA07.
 3. Jos koulu määrittää tietylle kurssille tietyn jakson ja palkin, merkkaa nuo tiedot kyseisen kurssikoodin perään (jakso toiselle sarakkeelle, palkki kolmannelle).
 4. Tarvittaessa määritä ennakkotietovaatimukset (ks. alla). Tämä ei ole pakollista.
