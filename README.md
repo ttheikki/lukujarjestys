@@ -18,7 +18,11 @@ Näiden perusteella ohjelma laskee käyttäjän määräämän määrän lukujä
 
 ```git clone https://github.com/ttheikki/lukujarjestys.git ~/Documents/lukujarjestys```
 
-Tietokone saattaa pyytää asentamaan komentorivikehitystyökalut. Hyväksy tämä painamalla "Asenna" ja hyväksymällä lisenssitiedot.
+Tietokone saattaa pyytää asentamaan komentorivikehitystyökalut. Hyväksy tämä painamalla "Asenna" ja hyväksymällä lisenssitiedot. Jos näin kävi, voit varmistaa edellisen komennon läpimenon ajamalla sen uudestaan:
+
+```git clone https://github.com/ttheikki/lukujarjestys.git ~/Documents/lukujarjestys```
+
+Tällä kertaa ei pitäisi tulla kehotusta komentorivikehitystyökalujen asentamisesta, vaan ilmoitus git-komennon aikaansaamasta toiminnosta.
 
 - Asenna homebrew:
 
@@ -30,11 +34,11 @@ Tietokone saattaa pyytää asentamaan komentorivikehitystyökalut. Hyväksy täm
 
 ```brew install python3```
 
-- Editoi haluttua omien kurssien tiedostoa (ks. omat-alkuiset tiedostot) esim. Numbers-ohjelmalla. Editointiohjeet ovat [tällä sivulla](OmatKurssit.md) 
+- Editoi haluttua omien kurssien tiedostoa (ks. omat-alkuiset .csv-loppuiset tiedostot) esim. Numbers-ohjelmalla. Toisin sanoen, etsi Finderilla kansio lukujarjestys Dokumentit-kansion alta ja avaa se esim. Numbersilla (tai tekstieditointiohjelmalla). Editointiohjeet ovat [tällä sivulla](OmatKurssit.md) 
 
 - Vaihda hakemistoon, jonka loit lukujärjestysohjelmalle kirjoittamalla terminaalissa komento
 
-```cd ~/Documents/lukujarj```
+```cd ~/Documents/lukujarjestys```
 
 - Aja ohjelma esim. komennolla
 
