@@ -36,6 +36,10 @@ Tällä kertaa ei pitäisi tulla kehotusta komentorivikehitystyökalujen asentam
 
 - Editoi haluttua omien kurssien tiedostoa (ks. omat-alkuiset .csv-loppuiset tiedostot) esim. Numbers-ohjelmalla. Toisin sanoen, etsi Finderilla kansio lukujarjestys Dokumentit-kansion alta ja avaa se esim. Numbersilla (tai tekstieditointiohjelmalla). Editointiohjeet ovat [tällä sivulla](OmatKurssit.md) 
 
+- Asenna xlwt-paketti, jonka avulla saat tehtyä lukujärjestysvaihtoehdoista Excel-tiedostoja
+
+```pip3 install xlwt```
+
 - Vaihda hakemistoon, jonka loit lukujärjestysohjelmalle kirjoittamalla terminaalissa komento
 
 ```cd ~/Documents/lukujarjestys```
