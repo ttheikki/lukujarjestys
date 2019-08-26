@@ -14,15 +14,15 @@ Näiden perusteella ohjelma laskee käyttäjän määräämän määrän lukujä
 
 - Avaa Pääte-ohjelma (Launchpad - Muut - Pääte)
 
-- Asenna lukujärjestystiedostot komennolla (kirjoita/leikkaa-liimaa komento Päätteelle, ja paina Enter)
+- Asenna komentorivikehitystyökalut komennolla (kirjoita tai leikkaa-liimaa komento Päätteelle, ja paina Enter)
+
+```xcode-select --install```
+
+Hyväksy lisenssitiedot, ja odota kunnes kehitystyökalut on asennettu (saattaa kestää hetken).
+
+- Asenna lukujärjestystiedostot komennolla 
 
 ```git clone https://github.com/ttheikki/lukujarjestys.git ~/Documents/lukujarjestys```
-
-Tietokone saattaa pyytää asentamaan komentorivikehitystyökalut. Hyväksy tämä painamalla "Asenna" ja hyväksymällä lisenssitiedot. Jos näin kävi, voit varmistaa edellisen komennon läpimenon ajamalla sen uudestaan:
-
-```git clone https://github.com/ttheikki/lukujarjestys.git ~/Documents/lukujarjestys```
-
-Tällä kertaa ei pitäisi tulla kehotusta komentorivikehitystyökalujen asentamisesta, vaan ilmoitus git-komennon aikaansaamasta toiminnosta.
 
 - Asenna homebrew:
 
@@ -44,7 +44,7 @@ Tällä kertaa ei pitäisi tulla kehotusta komentorivikehitystyökalujen asentam
 
 ```cd ~/Documents/lukujarjestys```
 
-- Aja ohjelma esim. komennolla
+- Aja ohjelma esim. komennolla (vaihda loppuun muokkaamasi omat-tiedoston nimi)
 
 ```python3 lukujarj.py -t tarjotin_Norssi_Jyvaskyla_2019.csv -i omat_tokaluokka_esim.csv```
 
