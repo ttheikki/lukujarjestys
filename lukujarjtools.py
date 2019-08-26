@@ -57,8 +57,6 @@ def tulosta_lukujarj(lista, eiloydy):
         print('En saanut näitä kursseja sopimaan: ', eiloydy)
 
 
-
-
 def onko_kaikki(list1, list2):
     # Tarkistaa tuliko kaikki kurssit mukaan
     if len(list2-set(flatten(list1))) == 0:
@@ -211,3 +209,20 @@ def toistuvat_kurssit(list1):
                         toistuvat.append(x)
                     nahty[x] += 1
     return toistuvat, nahty
+
+
+def etsi_samat(list1):
+    # Etsii ne jaksot ja palkit, joihin tulee sama kurssi kaikissa vaihtoehdoissa
+    from copy import deepcopy
+    m=0
+    for vaihtoehto in list1:
+        if m == 0:
+            samat = deepcopy(vaihtoehto)
+            jaksoja = len(vaihtoehto[0])
+            palkkeja = len(vaihtoehto)
+            m = 1
+        else:
+            for j in range(0, jaksoja):
+                for k in range(0, palkkeja):
+                    samat[k][j] = intersection(samat[k][j], vaihtoehto[k][j])
+    return samat

@@ -65,13 +65,21 @@ def lueomatkurssit(omakurssitiedosto, hiljainen):
 def tulokset_taulukkoon(tulokset, eiloytyneet, tiedosto):
     import xlwt
     from lukujarjtools import toistuvat_kurssit
+    from lukujarjtools import etsi_samat
 
     firstheaderstyle = xlwt.easyxf('font: name Times New Roman, color-index red, bold on')
     tableheaderstyle = xlwt.easyxf('font: name Times New Roman, color-index black, bold on')
 #    lukujarjstyle = xlwt.easyxf('font: name Times New Roman, border: left thin,right thin,top thin,bottom thin')
     lukujarjstyle = xlwt.easyxf('border: left medium,right medium,top medium,bottom medium')
- 
+
+    bflukujarjstyle = xlwt.easyxf('border: left medium,right medium,top medium,bottom medium; font: bold on')
+
+    
     textstyle = xlwt.easyxf('font: name Times New Roman')
+
+    samat = etsi_samat(tulokset)
+    jaksoja = len(samat[0])
+    palkkeja = len(samat)
     
     wb = xlwt.Workbook()
     j=0
@@ -79,24 +87,40 @@ def tulokset_taulukkoon(tulokset, eiloytyneet, tiedosto):
         j += 1
         ws = wb.add_sheet("".join(['Vaihtoehto ',str(j)]))
         ws.write(0, 0, "".join(['Lukujärjestysvaihtoehto ', str(j)]), style=firstheaderstyle)
-        ws.write(1, 0, "Jaksot ovat eri riveillä, palkit eri sarakkeissa", style=textstyle)
-        k = 0
-        for palkki in vaihtoehto:
-            ws.write(3, k+1, k+1, style = tableheaderstyle)
-            k += 1
-            l = 0
-            for jakso in palkki:
-                if k == 1:
-                    ws.write(4+l, 0, l+1, style = tableheaderstyle)
-                for val in jakso:
-                    ws.write(4+l, k, val, style = lukujarjstyle)
-                l += 1
+        ws.write(1, 0, "Jaksot ovat eri riveillä, palkit eri sarakkeissa.", style=textstyle)
+        ws.write(2, 0, "Kaikissa vaihtoehdoissa samoihin paikkoihin tulevat kurssit on lihavoitu (riippuu vaihtoehtojen määrästä).", style=textstyle)
+        #k = 0
+        # Tämä olisi pythonin tapa tehdä tuo luuppi, mutta halusin käyttää tietoa toisesta tuplesta merkitäkseni eri tavoin kaikissa toistuvat kurssit, joten käytän sitten vain noita tuplejen pituuksia
+        # for palkki in vaihtoehto:
+        #     ws.write(3, k+1, k+1, style = tableheaderstyle)
+        #     k += 1
+        #     l = 0
+        #     for jakso in palkki:
+        #         if k == 1:
+        #             ws.write(4+l, 0, l+1, style = tableheaderstyle)
+        #         for val in jakso:
+        #             ws.write(4+l, k, val, style = lukujarjstyle)
+        #         l += 1
+
+        for k in range(0, palkkeja):
+            ws.write(4, k+1, k+1, style = tableheaderstyle)
+            #k += 1
+            #l = 0
+            for l in range(0, jaksoja):
+                if k == 0:
+                    ws.write(5+l, 0, l+1, style = tableheaderstyle)
+                for val in vaihtoehto[k][l]:
+                    if len(samat[k][l]) == 0:
+                        ws.write(5+l, k+1, val, style = lukujarjstyle)
+                    else:
+                        ws.write(5+l, k+1, val, style = bflukujarjstyle)
+                #l += 1
         toistuvat, nahty = toistuvat_kurssit(vaihtoehto)
         if len(toistuvat) > 0:
             for x in toistuvat:
-                ws.write(6+l, 0, "".join(['Huomaa, että kurssi ', x, ' esiintyy ', str(nahty[x]), ' kertaa, eli nuo paikat ovat vaihtoehtoisia']), style = textstyle)
+                ws.write(7+l, 0, "".join(['Huomaa, että kurssi ', x, ' esiintyy ', str(nahty[x]), ' kertaa, eli nuo paikat ovat vaihtoehtoisia']), style = textstyle)
                 l += 1
         if len(eiloytyneet[j-1]) >0:
-            ws.write(6+l, 0, "".join(["En saanut näitä kursseja sopimaan: ", ",".join(eiloytyneet[j-1])]), style = textstyle)
+            ws.write(7+l, 0, "".join(["En saanut näitä kursseja sopimaan: ", ",".join(eiloytyneet[j-1])]), style = textstyle)
 
     wb.save(tiedosto)
