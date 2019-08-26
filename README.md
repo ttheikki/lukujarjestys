@@ -15,7 +15,9 @@ Näiden perusteella ohjelma laskee käyttäjän määräämän määrän lukujä
 - Avaa Pääte-ohjelma (Launchpad - Muut - Pääte)
 
 - Asenna komentorivikehitystyökalut komennolla
+
 ```xcode-select --install```
+
 Hyväksy lisenssitiedot, ja odota kunnes kehitystyökalut on asennettu (saattaa kestää hetken).
 
 - Asenna lukujärjestystiedostot komennolla (kirjoita/leikkaa-liimaa komento Päätteelle, ja paina Enter)
