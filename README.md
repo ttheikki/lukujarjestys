@@ -44,7 +44,7 @@ Hyväksy lisenssitiedot, ja odota kunnes kehitystyökalut on asennettu (saattaa 
 
 ```cd ~/Documents/lukujarjestys```
 
-- Aja ohjelma esim. komennolla
+- Aja ohjelma esim. komennolla (vaihda loppuun muokkaamasi omat-tiedoston nimi)
 
 ```python3 lukujarj.py -t tarjotin_Norssi_Jyvaskyla_2019.csv -i omat_tokaluokka_esim.csv```
 
