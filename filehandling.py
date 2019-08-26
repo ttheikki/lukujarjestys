@@ -49,7 +49,7 @@ def lueomatkurssit(omakurssitiedosto, hiljainen):
     omatkurssit = set()
     pakotetut = set()
     ennakkotiedot = set()
-    for j in range(0, line_count2 - 1):
+    for j in range(0, line_count - 1):
         omatkurssit.add(okurssit[j][0])
         if len(okurssit[j][2]) > 0:
             # Pakota nämä kurssit näille paikoille
