@@ -14,15 +14,13 @@ Näiden perusteella ohjelma laskee käyttäjän määräämän määrän lukujä
 
 - Avaa Pääte-ohjelma (Launchpad - Muut - Pääte)
 
+- Asenna komentorivikehitystyökalut komennolla
+```xcode-select --install```
+Hyväksy lisenssitiedot, ja odota kunnes kehitystyökalut on asennettu (saattaa kestää hetken).
+
 - Asenna lukujärjestystiedostot komennolla (kirjoita/leikkaa-liimaa komento Päätteelle, ja paina Enter)
 
 ```git clone https://github.com/ttheikki/lukujarjestys.git ~/Documents/lukujarjestys```
-
-Tietokone saattaa pyytää asentamaan komentorivikehitystyökalut. Hyväksy tämä painamalla "Asenna" ja hyväksymällä lisenssitiedot. Jos näin kävi, voit varmistaa edellisen komennon läpimenon ajamalla sen uudestaan:
-
-```git clone https://github.com/ttheikki/lukujarjestys.git ~/Documents/lukujarjestys```
-
-Tällä kertaa ei pitäisi tulla kehotusta komentorivikehitystyökalujen asentamisesta, vaan ilmoitus git-komennon aikaansaamasta toiminnosta.
 
 - Asenna homebrew:
 
