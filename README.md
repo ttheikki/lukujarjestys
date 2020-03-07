@@ -76,6 +76,9 @@ Komentoriviparametrit ovat (vaihda <x>: tilalle numero tai tiedostonimi):
 
 -o <x> tai --taulukkotiedosto=<x>: vie tulostus taulukkotiedostoon <x> (yleensä .xls-päätteinen)
 
+## Kurssitarjotintiedostosta
+Kun teet kurssitarjotintiedoston omalle koulullesi, muuta hajautetut kurssit 
+
 ## Lisäyssuunnitelmia
 Tulevaisuudessa tähän voisi vielä lisätä:
 - Suora Excel-tiedostojen luku, ja käyttäjän mahdollisuus spesifioida ne
