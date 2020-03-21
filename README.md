@@ -1,4 +1,4 @@
-# lukujarjestys
+# Lukujarjestys
 Tässä projektissa ohjelma tekee lukujärjestysvaihtoehtoja annetulle kurssitarjottimelle käyttäjän määrittämillä kurssivaihtoehdoilla.
 
 Ohjelma ratkaisee lukiolaisten usein kohtaaman ongelman: saanko kaikki haluamani kurssit mahtumaan kouluni kurssitarjottimelta valittuihin kursseihin? Mitkä ovat eri vaihtoehdot lukujärjestyksiksi? Entä jos haluan fiksata jonkin tietyn aineen tiettyyn palkkiin, jotta pääsen kaverin kanssa samalle kurssille? Tai sitten haluan johonkin palkkiin hyppytunnin harrastusten vuoksi, voinko vielä sittenkin saada kaikki aineet suoritettua, vai pitäisikö tehdä jotain itseopiskeluna?
