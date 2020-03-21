@@ -49,6 +49,7 @@ def lueomatkurssit(omakurssitiedosto, hiljainen):
     omatkurssit = set()
     pakotetut = set()
     ennakkotiedot = set()
+    tarkeat = set()
     for j in range(0, line_count - 1):
         omatkurssit.add(okurssit[j][0])
         if len(okurssit[j][2]) > 0:
@@ -56,11 +57,15 @@ def lueomatkurssit(omakurssitiedosto, hiljainen):
             pakotetut.add((okurssit[j][0], okurssit[j][1], okurssit[j][2]))
         else:
             if len(okurssit[j][1]) > 0:
-                # Tämän kurssin pitää tulla ennen tätä toista
-                ennakkotiedot.add((okurssit[j][0], okurssit[j][1]))
+                if okurssit[j][1] == "x" or okurssit[j][1] == "X":
+                    # Tämä on tärkeä kurssi, joten sen pitää olla mukana lukujärjestysehdotuksissa
+                    tarkeat.add(okurssit[j][0])
+                else:
+                    # Tämän kurssin pitää tulla ennen tätä toista
+                    ennakkotiedot.add((okurssit[j][0], okurssit[j][1]))
 
 
-    return omatkurssit, pakotetut, ennakkotiedot
+    return omatkurssit, pakotetut, ennakkotiedot, tarkeat
 
 def tulokset_taulukkoon(tulokset, eiloytyneet, tiedosto):
     import xlwt

@@ -78,9 +78,9 @@ onnistuneet = 0
 omat = [[set for i in range(jaksoja)] for j in range(palkkeja)]
 
 jkurssit = f.luekurssit(tarjotintiedosto, jaksoja, palkkeja, hiljainen)
-omatkurssit, pakotetut, ennakkotiedot = f.lueomatkurssit(omakurssitiedosto, hiljainen)
+omatkurssit, pakotetut, ennakkotiedot, tarkeat = f.lueomatkurssit(omakurssitiedosto, hiljainen)
 
-    # Pakota nämä kurssit annetuille paikoille
+# Pakota nämä kurssit annetuille paikoille
 for x in pakotetut:
     jkurssit[int(x[2])-1][int(x[1])-1] = set([x[0]])
     #jkurssit[int(x[1])-1][int(x[2])-1] = set([x[0]])
@@ -118,22 +118,27 @@ for j in range(0,yrityksia):
             lj.poista_uniikit(okurssit)
         else:
             eiloydy.add(kurssi)
-    if verbose:
-        print('Ei löydy paikkaa', len(eiloydy), 'kurssille')
-    # Laita järjestykseen sen mukaan minkä verran oli ei-sopivia kursseja
-    k = lj.etsi_minimi(sopimattomat, len(eiloydy))
-    if(k > -1):
-        k2 = lj.etsi_minimi2(sopimattomat, len(eiloydy))
-        if lj.onko_eri(tulokset, okurssit, k2, k):
-            onnistuneet = onnistuneet + 1
-            # Siirtää tuloksia hiukan eteenpäin
-            for l in range(min(vaihtoehtoja,onnistuneet) - 1, k, -1):
-                tulokset[l]=tulokset[l-1]
-                eiloytyneet[l]=eiloytyneet[l-1]
-                sopimattomat[l]=sopimattomat[l-1]
-            tulokset[k] = okurssit
-            sopimattomat[k]=len(eiloydy)
-            eiloytyneet[k]=eiloydy
+
+    if len(lj.intersection(eiloydy,tarkeat)) > 0:
+        if verbose:
+            print('Tärkeä kurssi sopimattomien joukossa, ei jatkoon.')
+    else:
+        if verbose:
+            print('Ei löydy paikkaa', len(eiloydy), 'kurssille')
+        # Laita järjestykseen sen mukaan minkä verran oli ei-sopivia kursseja. 
+        k = lj.etsi_minimi(sopimattomat, len(eiloydy))
+        if(k > -1):
+            k2 = lj.etsi_minimi2(sopimattomat, len(eiloydy))
+            if lj.onko_eri(tulokset, okurssit, k2, k):
+                onnistuneet = onnistuneet + 1
+                # Siirtää tuloksia hiukan eteenpäin
+                for l in range(min(vaihtoehtoja,onnistuneet) - 1, k, -1):
+                    tulokset[l]=tulokset[l-1]
+                    eiloytyneet[l]=eiloytyneet[l-1]
+                    sopimattomat[l]=sopimattomat[l-1]
+                    tulokset[k] = okurssit
+                    sopimattomat[k]=len(eiloydy)
+                    eiloytyneet[k]=eiloydy
 
 if ulostulo == "näytölle":
     for j in range(0, vaihtoehtoja):
