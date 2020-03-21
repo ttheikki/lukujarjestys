@@ -4,8 +4,8 @@ Tässä projektissa ohjelma tekee lukujärjestysvaihtoehtoja annetulle kurssitar
 Ohjelma ratkaisee lukiolaisten usein kohtaaman ongelman: saanko kaikki haluamani kurssit mahtumaan kouluni kurssitarjottimelta valittuihin kursseihin? Mitkä ovat eri vaihtoehdot lukujärjestyksiksi? Entä jos haluan fiksata jonkin tietyn aineen tiettyyn palkkiin, jotta pääsen kaverin kanssa samalle kurssille? Tai sitten haluan johonkin palkkiin hyppytunnin harrastusten vuoksi, voinko vielä sittenkin saada kaikki aineet suoritettua, vai pitäisikö tehdä jotain itseopiskeluna?
 
 Ohjelma vaatii nykyisellään kaksi Excelistä tallennettua .csv-tiedostoa:
-- Koulun antaman kurssitarjottimen (kurssitarjotin.csv), jossa ensimmäisellä sarakkeella on kurssikoodit, toisella palkit, ja kolmannella jaksot.
-- Opiskelijan kurssit sisältävän listan (omatkurssit.csv), jossa ensimmäisellä sarakkeella on kurssikoodi. Lisäksi toiselle ja kolmannelle sarakkeelle voi asettaa kyseisen kurssin palkin ja jakson, jos ne jo tietää, tai jos ne haluaa yrittää fiksata kyseisiksi. Toisaalta voi toiselle sarakkeelle kirjoittaa toisen kurssikoodin: silloin ohjelma pyrkii asettamaan tämän jälkimmäisen kurssikoodin omaavan kurssin myöhemmälle jaksolle (esim. matematiikka pitää yleensä suorittaa koodijärjestyksessä).
+- Koulun antaman kurssitarjottimen (kurssitarjotin.csv), jossa ensimmäisellä sarakkeella on kurssikoodit, toisella palkit, ja kolmannella jaksot. HUOM! Kahteen tai useampaan jaksoon jaettuja kursseja ohjelma ei vielä tue. Niiden tapauksessa opiskelijan pitäisi "pakottaa" kyseiset kurssit annetuille paikoille lukujärjestyksessä.
+- Opiskelijan kurssit sisältävän listan (omatkurssit.csv), jossa ensimmäisellä sarakkeella on kurssikoodi. Lisäksi toiselle ja kolmannelle sarakkeelle voi asettaa kyseisen kurssin palkin ja jakson, jos ne jo tietää, tai jos ne haluaa yrittää fiksata kyseisiksi. Jaksojen yli hajautetut kurssit kannattaa tässä kohtaa asettaa paikoilleen, jotta kyseisiin palkkeihin ei tarjota muita kursseja. Toisaalta voi toiselle sarakkeelle kirjoittaa toisen kurssikoodin: silloin ohjelma pyrkii asettamaan tämän jälkimmäisen kurssikoodin omaavan kurssin myöhemmälle jaksolle (esim. matematiikka pitää yleensä suorittaa koodijärjestyksessä).
 
 Näiden perusteella ohjelma laskee käyttäjän määräämän määrän lukujärjestysvaihtoehtoja (oletuksena 1000), ja etsii vaihtoehdoista ne, joissa mukaan tulee mahdollisimman suuri osa opiskelijan määräämistä omista kursseista. Näistä tulostetaan ruudulle sitten käyttäjän valitsema määrä (oletuksena 4) "parasta" vaihtoehtoa.
 
@@ -75,6 +75,9 @@ Komentoriviparametrit ovat (vaihda <x>: tilalle numero tai tiedostonimi):
 -i <x> tai --omatkurssit=<x>: omien kurssien tiedosto <x> (oletuksena omatkurssit.csv
 
 -o <x> tai --taulukkotiedosto=<x>: vie tulostus taulukkotiedostoon <x> (yleensä .xls-päätteinen)
+
+## Kurssitarjotintiedostosta
+Kun teet kurssitarjotintiedoston omalle koulullesi, muuta hajautetut kurssit 
 
 ## Lisäyssuunnitelmia
 Tulevaisuudessa tähän voisi vielä lisätä:
