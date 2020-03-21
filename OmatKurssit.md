@@ -5,10 +5,13 @@
 1. Avaa haluamasi esimerkkitiedosto taulukkolaskentaohjelmalla (mikä tahansa, joka nimellä "omat_xxx.csv"). Poista turhat tiedot toiselta ja kolmannelta sarakkeelta (eli jollet tiedä niiden olevan oikein, tyhjennä kyseiset sarakkeet).
 2. Valitse mieleisesi kurssikoodit ensimmäiselle sarakkeelle. Koodien pitää olla samat kuin kurssitarjottimella ja lukujärjestyksessä, tyyliin BI02 tai ENA07.
 3. Jos koulu määrittää tietylle kurssille tietyn jakson ja palkin, merkkaa nuo tiedot kyseisen kurssikoodin perään (jakso toiselle sarakkeelle, palkki kolmannelle).
-4. Tarvittaessa määritä ennakkotietovaatimukset (ks. alla). Tämä ei ole pakollista.
+4. Tarvittaessa määritä ennakkotietovaatimukset ja/tai "tärkeät kurssit" (ks. alla). Tämä ei ole pakollista.
 5. Tallenna tiedosto csv-muodossa (Numbers-ohjelmassa valitse "Arkisto-Vie-CSV", valitse tiedostonimi; Excelissä tämä toimii yleensä "Tallenna nimellä"-valikosta)
 6. Aja ohjelma etsiäksesi lukujärjestyksen. Jos lukujärjestysvaihtoehtoja löytyy helposti (ts., yksikään kurssi ei jää ulos), voit muokata omien kurssien luetteloa esim. pakottamalla jonkun kurssin tiettyyn kohtaan, jne.
 7. Oletuksena lukujärjestysvaihtoehtoja tulee 4, ja ne tulostetaan suoraan ruudulle. Jos haluat enemmän (tai vähemmän) vaihtoehtoja, käytä valintaa ´´´-v x´´´, missä x on vaihtoehtojen lukumäärä. Jos haluat vaihtoehdot Excel-tiedostoon (jota pystyy myös lukemaan Numbers-ohjelmalla), käytä valintaa ´´´-o lukujärjestys.xls´´´.  Ohjelmien muista valinnoista saat tietoa [README-tiedostosta](README.md).
+
+## Tärkeät kurssit
+Jos haluat nähdä vain sellaiset kurssivaihtoehdot, joissa esiintyy jokin tietty kurssi tai tietyt kurssit, merkkaa kyseisten kurssikoodien perään toiseen sarakkeeseen "X". Tällöin ohjelma ehdottaa vain vaihtoehtoja, joissa nuo kurssit ovat mukana lukujärjestyksessä. HUOM! Tällöin et voi merkata ennakkotietoja tuolle kurssille. Jos tämä on iso ongelma, kerro ohjelman ylläpitäjälle, niin hän voi fiksata sen.
 
 ## Ennakkotiedot
 Jos haluamasi kurssit pitää suorittaa tietyssä järjestyksessä (esim. MAA01 ennen MAA02:sta), voit kirjoittaa tämän toiselle sarakkeelle (esim. MAA02 toiselle sarakkeelle MAA01:n perään). Toisella sarakkeella oleva kurssi pitää myös kirjoittaa erikseen ensimmäiselle sarakkeelle. Esimerkiksi seuraavat rivit mahdollistavat suoritusjärjestyksen MAA01 - MAA02 - MAA03:
