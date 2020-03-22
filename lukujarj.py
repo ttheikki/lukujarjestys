@@ -140,6 +140,11 @@ for j in range(0,yrityksia):
                     sopimattomat[k]=len(eiloydy)
                     eiloytyneet[k]=eiloydy
 
+if(onnistuneet < vaihtoehtoja):
+    print('En löytänyt haluttua määrää erilaisia vaihtoehtoja. Löysin vain', onnistuneet-1,', joten tulostan ne.')
+    vaihtoehtoja = onnistuneet-1
+
+                    
 if ulostulo == "näytölle":
     for j in range(0, vaihtoehtoja):
         print('*************** Lukujärjestysvaihtoehto', j+1,'*******************')
