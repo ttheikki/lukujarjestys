@@ -36,6 +36,9 @@ def lueomatkurssit(omakurssitiedosto, hiljainen):
         line_count = 0
         okurssit = []
         for row in csv_reader:
+            # Skippaa tyhjät rivit
+            if not (row):
+                continue
             # Ensimmäinen rivi on otsikkoa varten
             if line_count == 0:
                 line_count += 1
